@@ -6,9 +6,27 @@ management. You use a BTC transaction to deposit money into the service, and
 call an HTTP endpoint to call invoices. Whenever you wish to, you can withdraw
 the BTC funds from the service back into your wallet.
 
+## API Tokens
+
+The API is access-protected using authentication tokens. Tokens can be generated
+using the dashboard. There are three distinct permissions that can be given to tokens:
+
+- spend, which allows paying invoices and BTC withdrawals;
+- receive, which allows generating invoices and deposit addresses;
+- read, which allows querying data from the API.
+
+You can generate tokens that don't have superfluous permissions, which
+is useful for damage control in case your tokens get compromised. The tokens
+will only be displayed at the moment they're generated and never again. You can revoke
+tokens at any point.
+
+To authenticate with the API, every HTTP request you send should contain an
+`X-Auth-Token` header with the token in it. **Note:** no `Bearer` prefix is
+expected.
+
 ## Workflow
 
-For experimenting with the API, use [swagger](https://api.coupler.network/v0/swagger).
+To easily interact with the API, use [swagger](https://api.coupler.network/v0/swagger).
 Before using the API on mainnet, feel free to experiment on [testnet](https://testnet.coupler.network).
 
 1. Generate a token using your [dashboard](https://coupler.network/dashboard).
@@ -29,4 +47,4 @@ also some API limits on querying data, but if you're using the API in an
 ethical way, you should never run into these.
 
 If you have any questions, please [open an ticket](https://github.com/coupler-network/guide/issues/new)
-in this repository and we'll try to get back to you as soon as we can.
+in this repository and we'll try to get back to you as soon as possible.
