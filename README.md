@@ -3,7 +3,7 @@
 [coupler.network](https://coupler.network) provides a REST API that lets users
 integrate with the Lightning Network without having to worry about liquidity
 management. You use a BTC transaction to deposit money into the service, and
-call an HTTP endpoint to call invoices. Whenever you wish to, you can withdraw
+call an HTTP endpoint to create invoices. Whenever you wish to, you can withdraw
 the BTC funds from the service back into your wallet.
 
 ## API Tokens
